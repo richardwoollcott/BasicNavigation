@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="navigateToSecondPage">Navigate to Second Page</string>
+	<string name="app_name">BasicNavigation.Droid</string>
+</resources>
