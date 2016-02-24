@@ -11,7 +11,7 @@ namespace BasicNavigation.iOS
 	partial class MainViewController : ControllerBase
 	{
 		// Keep track of bindings to avoid premature garbage collection
-		private readonly List<Binding> _bindings = new List<Binding>();
+		private readonly List<Binding> bindings = new List<Binding>();
 
 		/// <summary>
 		/// Gets a reference to the MainViewModel from the ViewModelLocator.
@@ -36,7 +36,7 @@ namespace BasicNavigation.iOS
 
 			// Binding between the first UILabel and the WelcomeTitle property on the VM.
 			// Keep track of the binding to avoid premature garbage collection
-			_bindings.Add(
+			bindings.Add(
 				this.SetBinding(
 					() => Vm.WelcomeTitle,
 					() => WelcomeText.Text));

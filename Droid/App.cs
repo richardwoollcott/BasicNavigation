@@ -8,13 +8,13 @@ namespace BasicNavigation.Droid
 {
 	public static class App
 	{
-		private static ViewModelLocator _locator;
+		private static ViewModelLocator locator;
 
 		public static ViewModelLocator Locator
 		{
 			get
 			{
-				if (_locator == null)
+				if (locator == null)
 				{
 					// Initialize the MVVM Light DispatcherHelper.
 					// This needs to be called on the UI thread.
@@ -25,13 +25,10 @@ namespace BasicNavigation.Droid
 					SimpleIoc.Default.Register<INavigationService>(() => nav);
 					nav.Configure(ViewModelLocator.SecondPageKey, typeof(SecondActivity));
 
-					// Register the MVVM Light DialogService
-					SimpleIoc.Default.Register<IDialogService, DialogService>();
-
-					_locator = new ViewModelLocator();
+					locator = new ViewModelLocator();
 				}
 
-				return _locator;
+				return locator;
 			}
 		}
 	}

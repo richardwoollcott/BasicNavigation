@@ -2,7 +2,9 @@
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+
 using BasicNavigation.ViewModel;
+
 using GalaSoft.MvvmLight.Helpers;
 using GalaSoft.MvvmLight.Views;
 
@@ -12,7 +14,7 @@ namespace BasicNavigation.Droid
 	public class MainActivity : ActivityBase
 	{
 		// Keep track of bindings to avoid premature garbage collection
-		private readonly List<Binding> _bindings = new List<Binding>();
+		private readonly List<Binding> bindings = new List<Binding>();
 
 		/// <summary>
 		/// Gets a reference to the MainViewModel from the ViewModelLocator.
@@ -46,6 +48,7 @@ namespace BasicNavigation.Droid
 					?? (navigateButton = FindViewById<Button>(Resource.Id.navigateButton));
 			}
 		}
+
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -57,7 +60,7 @@ namespace BasicNavigation.Droid
 
 			// Binding between the first TextView and the WelcomeTitle property on the VM.
 			// Keep track of the binding to avoid premature garbage collection
-			_bindings.Add(
+			bindings.Add(
 				this.SetBinding(
 					() => Vm.WelcomeTitle,
 					() => WelcomeText.Text));
